@@ -1,9 +1,9 @@
 FROM node:lts-buster
 
-COPY package.json .
+COPY package.json yarn.lock ./
 
-RUN npm install
+RUN yarn install --ignore-engines
 
 COPY . .
 
-CMD ["npm", "start"]
+CMD ["yarn", "start"]
